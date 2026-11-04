@@ -1,0 +1,67 @@
+# Entity: geo
+
+main: kit: entity: geo: {
+
+  alias: field: {}
+
+  name: "geo"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/geo/bootstrap"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "en"
+                k: "query"
+                n: "locale"
+                or: "locale"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/geo/bootstrap"
+          q: {
+            "$action": "bootstrap"
+            exist: [
+              "locale"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "geo"
+            }
+            {
+              lit: "bootstrap"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

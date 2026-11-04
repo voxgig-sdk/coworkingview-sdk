@@ -1,0 +1,798 @@
+# Coworkingview PHP SDK Reference
+
+Complete API reference for the Coworkingview PHP SDK.
+
+
+## CoworkingviewSDK
+
+### Constructor
+
+```php
+require_once __DIR__ . '/coworkingview_sdk.php';
+
+$client = new CoworkingviewSDK($options);
+```
+
+Create a new SDK client instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `$options` | `array` | SDK configuration options. |
+| `$options["base"]` | `string` | Base URL for API requests. |
+| `$options["prefix"]` | `string` | URL prefix appended after base. |
+| `$options["suffix"]` | `string` | URL suffix appended after path. |
+| `$options["headers"]` | `array` | Custom headers for all requests. |
+| `$options["feature"]` | `array` | Feature configuration. |
+| `$options["system"]` | `array` | System overrides (e.g. custom fetch). |
+
+
+### Static Methods
+
+#### `CoworkingviewSDK::test($testopts = null, $sdkopts = null)`
+
+Create a test client with mock features active. Both arguments may be `null`.
+
+```php
+$client = CoworkingviewSDK::test();
+```
+
+
+### Instance Methods
+
+#### `Config($data = null)`
+
+Create a new `ConfigEntity` instance. Pass `null` for no initial data.
+
+#### `Facet($data = null)`
+
+Create a new `FacetEntity` instance. Pass `null` for no initial data.
+
+#### `Geo($data = null)`
+
+Create a new `GeoEntity` instance. Pass `null` for no initial data.
+
+#### `Health($data = null)`
+
+Create a new `HealthEntity` instance. Pass `null` for no initial data.
+
+#### `Market($data = null)`
+
+Create a new `MarketEntity` instance. Pass `null` for no initial data.
+
+#### `Operator($data = null)`
+
+Create a new `OperatorEntity` instance. Pass `null` for no initial data.
+
+#### `Place($data = null)`
+
+Create a new `PlaceEntity` instance. Pass `null` for no initial data.
+
+#### `Property($data = null)`
+
+Create a new `PropertyEntity` instance. Pass `null` for no initial data.
+
+#### `Search($data = null)`
+
+Create a new `SearchEntity` instance. Pass `null` for no initial data.
+
+#### `options_map(): array`
+
+Return a deep copy of the current SDK options.
+
+#### `get_utility(): CoworkingviewUtility`
+
+Return a copy of the SDK utility object.
+
+#### `direct(array $fetchargs = []): array`
+
+Make a direct HTTP request to any API endpoint. This is the raw-HTTP escape
+hatch: it does **not** throw. It returns a result array
+`["ok" => bool, "status" => int, "headers" => array, "data" => mixed]`, or
+`["ok" => false, "err" => \Exception]` on failure. Branch on `$result["ok"]`.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `$fetchargs["path"]` | `string` | URL path with optional `{param}` placeholders. |
+| `$fetchargs["method"]` | `string` | HTTP method (default: `"GET"`). |
+| `$fetchargs["params"]` | `array` | Path parameter values for `{param}` substitution. |
+| `$fetchargs["query"]` | `array` | Query string parameters. |
+| `$fetchargs["headers"]` | `array` | Request headers (merged with defaults). |
+| `$fetchargs["body"]` | `mixed` | Request body (arrays are JSON-serialized). |
+| `$fetchargs["ctrl"]` | `array` | Control options. |
+
+**Returns:** `array` — the result dict (see above); never throws.
+
+#### `prepare(array $fetchargs = []): mixed`
+
+Prepare a fetch definition without sending the request. Returns the
+`$fetchdef` array. Throws on error.
+
+
+---
+
+## ConfigEntity
+
+```php
+$config = $client->Config();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `flags` | `array` | Yes |  |
+| `message` | `array` | Yes |  |
+| `minSupportedBuild` | `int` | Yes |  |
+| `recommendedBuild` | `int` | No |  |
+
+### Operations
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
+
+```php
+$result = $client->Config()->load();
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): ConfigEntity`
+
+Create a new `ConfigEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## FacetEntity
+
+```php
+$facet = $client->Facet();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `capacityRange` | `array` | Yes |  |
+| `facets` | `array` | Yes |  |
+| `priceRange` | `array` | Yes |  |
+
+### Operations
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
+
+```php
+$result = $client->Facet()->load(["locale" => "locale"]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): FacetEntity`
+
+Create a new `FacetEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## GeoEntity
+
+```php
+$geo = $client->Geo();
+```
+
+### Operations
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
+
+```php
+$result = $client->Geo()->load(["locale" => "locale"]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): GeoEntity`
+
+Create a new `GeoEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## HealthEntity
+
+```php
+$health = $client->Health();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `sha` | `string` | Yes |  |
+| `status` | `string` | Yes |  |
+
+### Operations
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
+
+```php
+$result = $client->Health()->load();
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): HealthEntity`
+
+Create a new `HealthEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## MarketEntity
+
+```php
+$market = $client->Market();
+```
+
+### Operations
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
+
+```php
+$result = $client->Market()->load(["locale" => "locale"]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): MarketEntity`
+
+Create a new `MarketEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## OperatorEntity
+
+```php
+$operator = $client->Operator();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `asOf` | `string` | Yes |  |
+| `cities` | `array` | Yes |  |
+| `description` | `string` | No |  |
+| `faqs` | `array` | Yes |  |
+| `indexabilityBrand` | `mixed` | No |  |
+| `logo` | `array` | Yes |  |
+| `name` | `string` | Yes |  |
+| `pricePosition` | `array` | Yes |  |
+| `propertyCount` | `int` | Yes |  |
+| `slug` | `string` | Yes |  |
+| `tagline` | `string` | No |  |
+
+### Operations
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
+
+```php
+$result = $client->Operator()->load(["id" => "operator_id", "locale" => "locale"]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): OperatorEntity`
+
+Create a new `OperatorEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## PlaceEntity
+
+```php
+$place = $client->Place();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `asOf` | `string` | Yes |  |
+| `center` | `array` | Yes |  |
+| `faqs` | `array` | Yes |  |
+| `id` | `string` | No |  |
+| `intro` | `string` | No |  |
+| `kind` | `string` | Yes |  |
+| `name` | `string` | Yes |  |
+| `parent` | `array` | Yes |  |
+| `priceRange` | `array` | Yes |  |
+| `propertyCount` | `int` | Yes |  |
+| `shortDescription` | `string` | No |  |
+| `slug` | `string` | Yes |  |
+
+### Operations
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
+
+```php
+$result = $client->Place()->load(["kind" => "kind", "slug" => "slug", "locale" => "locale"]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): PlaceEntity`
+
+Create a new `PlaceEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## PropertyEntity
+
+```php
+$property = $client->Property();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `address` | `string` | Yes |  |
+| `amenities` | `array` | Yes |  |
+| `capacity` | `int` | No |  |
+| `capacity_status` | `string` | No |  |
+| `city` | `array` | Yes |  |
+| `coordinates` | `array` | Yes |  |
+| `countryCode` | `string` | No |  |
+| `description` | `string` | Yes |  |
+| `distanceMeters` | `float` | No |  |
+| `excerpt` | `string` | No |  |
+| `featured` | `bool` | Yes |  |
+| `fromBillingPeriod` | `string` | No |  |
+| `fromPrice` | `array` | Yes |  |
+| `images` | `array` | Yes |  |
+| `indexabilityCompleteness` | `mixed` | No |  |
+| `indexabilityState` | `mixed` | No |  |
+| `marketPosition` | `array` | Yes |  |
+| `operator` | `array` | Yes |  |
+| `pricingOptions` | `array` | Yes |  |
+| `slug` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `updatedAt` | `string` | No | When the underlying CMS record was last updated. |
+| `webUrl` | `string` | Yes |  |
+| `zone` | `array` | Yes |  |
+
+### Operations
+
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record, and throws on error.
+
+```php
+$results = $client->Property()->list(["locale" => "example"]);
+```
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
+
+```php
+$result = $client->Property()->load(["id" => "property_id", "locale" => "locale"]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): PropertyEntity`
+
+Create a new `PropertyEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## SearchEntity
+
+```php
+$search = $client->Search();
+```
+
+### Operations
+
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record, and throws on error.
+
+```php
+$results = $client->Search()->list(["locale" => "example", "q" => "example"]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): SearchEntity`
+
+Create a new `SearchEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## Features
+
+| Feature | Version | Description |
+| --- | --- | --- |
+| `ratelimit` | 0.0.1 | Rate limiting |
+| `retry` | 0.0.1 | Retry |
+| `test` | 0.0.1 | Test transport |
+| `timeout` | 0.0.1 | Timeout |
+
+
+Features are activated via the `feature` option:
+
+```php
+$client = new CoworkingviewSDK([
+  "feature" => [
+    "ratelimit" => ["active" => true],
+    "retry" => ["active" => true],
+    "test" => ["active" => true],
+    "timeout" => ["active" => true],
+  ],
+]);
+```
+
+
+### Configuring features
+
+Each feature is inactive until switched on, and an SDK with no feature
+configured does no feature work at all. Every option below keeps its default
+unless you name it.
+
+The array form of \`feature\` is significant: several features wrap the
+transport, and the order you list them in is the order they nest.
+
+#### Ordering
+
+`ratelimit`, `retry`, `timeout` wrap the transport. Each
+wraps whatever is already installed, so **activation order is nesting order**:
+a feature activated later sits OUTSIDE one activated earlier, and sees the call
+first.
+
+That decides behaviour, not just sequence: a feature that short-circuits the
+call, such as a cache serving a hit, stops every feature nested inside it from
+ever seeing that call.
+
+`test` attach to pipeline hooks
+rather than the transport, so their order does not affect what they observe.
+
+#### `ratelimit`
+
+Rate limiting.
+
+**Configuration**
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `burst` | `5` |
+| `rate` | `5` |
+
+| Option | Type |
+|---|---|
+| `now` | function |
+| `sleep` | function |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
+
+**Usage**
+
+Set `feature.ratelimit.active` to true in the client options, and override any option above in the same entry. Every option keeps
+its default unless you name it.
+
+**Considerations**
+
+- Wraps the transport: its place in the activation order decides what it
+  sees. See [Ordering](#ordering) above.
+- Inactive by default: leaving it out costs nothing at runtime.
+
+#### `retry`
+
+Retry.
+
+**Configuration**
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `factor` | `2` |
+| `maxDelay` | `2000` |
+| `minDelay` | `50` |
+| `retries` | `2` |
+| `statuses` | `[408, 425, 429, 500, 502, 503, 504]` |
+
+| Option | Type |
+|---|---|
+| `jitter` | boolean |
+| `sleep` | function |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
+
+**Usage**
+
+Set `feature.retry.active` to true in the client options, and override any option above in the same entry. Every option keeps
+its default unless you name it.
+
+**Considerations**
+
+- Wraps the transport: its place in the activation order decides what it
+  sees. See [Ordering](#ordering) above.
+- Inactive by default: leaving it out costs nothing at runtime.
+
+#### `test`
+
+Test transport.
+
+**Configuration**
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+| Option | Type |
+|---|---|
+| `entity` | map |
+| `net` | map |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
+
+**Usage**
+
+Set `feature.test.active` to true in the client options, and override any option above in the same entry. Every option keeps
+its default unless you name it.
+
+**Considerations**
+
+- Attaches to pipeline hooks, not the transport, so activation order does
+  not change what it observes.
+- Installs the BASE transport that the wrapping features wrap, so it must be
+  activated before them.
+- Inactive by default: leaving it out costs nothing at runtime.
+
+#### `timeout`
+
+Timeout.
+
+**Configuration**
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `ms` | `30000` |
+
+| Option | Type |
+|---|---|
+| `clearTimer` | function |
+| `now` | function |
+| `setTimer` | function |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
+
+**Usage**
+
+Set `feature.timeout.active` to true in the client options, and override any option above in the same entry. Every option keeps
+its default unless you name it.
+
+**Considerations**
+
+- Wraps the transport: its place in the activation order decides what it
+  sees. See [Ordering](#ordering) above.
+- Inactive by default: leaving it out costs nothing at runtime.
+

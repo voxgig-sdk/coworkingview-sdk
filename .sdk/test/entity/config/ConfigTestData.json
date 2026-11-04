@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "config": {
+      "CONFIG00": {
+        "flags": {},
+        "message": {},
+        "minSupportedBuild": 42,
+        "recommendedBuild": 43,
+        "id": "CONFIG00"
+      },
+      "CONFIG01": {
+        "flags": {},
+        "message": {},
+        "minSupportedBuild": 82,
+        "recommendedBuild": 83,
+        "id": "CONFIG01"
+      },
+      "CONFIG02": {
+        "flags": {},
+        "message": {},
+        "minSupportedBuild": 122,
+        "recommendedBuild": 123,
+        "id": "CONFIG02"
+      }
+    }
+  },
+  "new": {
+    "config": {
+      "config_ref01": {
+        "flags": {},
+        "message": {},
+        "minSupportedBuild": 162,
+        "recommendedBuild": 163
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/config": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

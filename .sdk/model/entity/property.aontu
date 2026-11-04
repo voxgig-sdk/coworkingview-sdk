@@ -1,0 +1,601 @@
+# Entity: property
+
+main: kit: entity: property: {
+
+  alias: field: {}
+
+  fields: {
+    address: {
+      h: "Address"
+      n: "address"
+      r: true
+      t: "`$STRING`"
+    }
+    amenities: {
+      h: "Amenities"
+      n: "amenities"
+      r: true
+      t: "`$ARRAY`"
+    }
+    capacity: {
+      h: "Capacity"
+      n: "capacity"
+      r: false
+      t: "`$INTEGER`"
+    }
+    capacity_status: {
+      h: "Capacity Status"
+      n: "capacity_status"
+      r: false
+      t: "`$STRING`"
+    }
+    city: {
+      h: "City"
+      n: "city"
+      r: true
+      t: "`$OBJECT`"
+    }
+    coordinates: {
+      h: "Coordinates"
+      n: "coordinates"
+      r: true
+      t: "`$OBJECT`"
+    }
+    countryCode: {
+      h: "Country Code"
+      n: "countryCode"
+      r: false
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: true
+      t: "`$STRING`"
+    }
+    distanceMeters: {
+      h: "Distance Meters"
+      n: "distanceMeters"
+      r: false
+      t: "`$NUMBER`"
+    }
+    excerpt: {
+      h: "Excerpt"
+      n: "excerpt"
+      r: false
+      t: "`$STRING`"
+    }
+    featured: {
+      h: "Featured"
+      n: "featured"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    fromBillingPeriod: {
+      h: "From Billing Period"
+      n: "fromBillingPeriod"
+      r: false
+      t: "`$STRING`"
+    }
+    fromPrice: {
+      h: "From Price"
+      n: "fromPrice"
+      r: true
+      t: "`$OBJECT`"
+    }
+    images: {
+      h: "Images"
+      n: "images"
+      r: true
+      t: "`$ARRAY`"
+    }
+    indexabilityCompleteness: {
+      h: "Indexability Completeness"
+      n: "indexabilityCompleteness"
+      r: false
+      t: "`$ANY`"
+    }
+    indexabilityState: {
+      h: "Indexability State"
+      n: "indexabilityState"
+      r: false
+      t: "`$ANY`"
+    }
+    marketPosition: {
+      h: "Market Position"
+      n: "marketPosition"
+      r: true
+      t: "`$OBJECT`"
+    }
+    operator: {
+      h: "Operator"
+      n: "operator"
+      r: true
+      t: "`$OBJECT`"
+    }
+    pricingOptions: {
+      h: "Pricing Options"
+      n: "pricingOptions"
+      r: true
+      t: "`$ARRAY`"
+    }
+    slug: {
+      h: "Slug"
+      n: "slug"
+      r: true
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: true
+      t: "`$STRING`"
+    }
+    updatedAt: {
+      fo: "date-time"
+      h: "Updated At"
+      n: "updatedAt"
+      r: false
+      sh: "When the underlying CMS record was last updated."
+      t: "`$STRING`"
+    }
+    webUrl: {
+      fo: "uri"
+      h: "Web Url"
+      n: "webUrl"
+      r: true
+      t: "`$STRING`"
+    }
+    zone: {
+      h: "Zone"
+      n: "zone"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "slug"
+    name: "id"
+  }
+
+  name: "property"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/properties"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "address"
+                or: "address"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "amenity"
+                or: "amenities"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "bbox"
+                or: "bbox"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "berlin"
+                k: "query"
+                n: "city"
+                or: "city"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "currency"
+                or: "currency"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "lat"
+                or: "lat"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "lng"
+                or: "lng"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "en"
+                k: "query"
+                n: "locale"
+                or: "locale"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "max_price"
+                or: "maxPrice"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: 4
+                k: "query"
+                n: "min_capacity"
+                or: "minCapacity"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "min_price"
+                or: "minPrice"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "operator"
+                or: "operator"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 2
+                k: "query"
+                n: "page_size"
+                or: "pageSize"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "private_office"
+                k: "query"
+                n: "pricing_option_type"
+                or: "pricingOptionType"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "radius_meter"
+                or: "radiusMeters"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "seed"
+                or: "seed"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "sort_by"
+                or: "sortBy"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "zone"
+                or: "zone"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/properties"
+          q: {
+            exist: [
+              "locale"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "properties"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/properties/map"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "address"
+                or: "address"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "amenity"
+                or: "amenities"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "13.2,52.4,13.6,52.6"
+                k: "query"
+                n: "bbox"
+                or: "bbox"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "city"
+                or: "city"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "currency"
+                or: "currency"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "lat"
+                or: "lat"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "lng"
+                or: "lng"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "en"
+                k: "query"
+                n: "locale"
+                or: "locale"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "max_price"
+                or: "maxPrice"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "min_capacity"
+                or: "minCapacity"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "min_price"
+                or: "minPrice"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "operator"
+                or: "operator"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 20
+                k: "query"
+                n: "page_size"
+                or: "pageSize"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "pricing_option_type"
+                or: "pricingOptionType"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "radius_meter"
+                or: "radiusMeters"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "seed"
+                or: "seed"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "sort_by"
+                or: "sortBy"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "zone"
+                or: "zone"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/properties/map"
+          q: {
+            "$action": "map"
+            exist: [
+              "locale"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "properties"
+            }
+            {
+              lit: "map"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/properties/{slug}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "hq-kings-cross-london"
+                k: "param"
+                n: "id"
+                or: "slug"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "en"
+                k: "query"
+                n: "locale"
+                or: "locale"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/properties/{slug}"
+          q: {
+            exist: [
+              "id"
+              "locale"
+            ]
+          }
+          r: {
+            param: {
+              slug: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "properties"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

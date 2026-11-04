@@ -1,0 +1,89 @@
+# Entity: market
+
+main: kit: entity: market: {
+
+  alias: field: {}
+
+  name: "market"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/market/rates"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "berlin"
+                k: "query"
+                n: "city"
+                or: "city"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "currency"
+                or: "currency"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "en"
+                k: "query"
+                n: "locale"
+                or: "locale"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/market/rates"
+          q: {
+            "$action": "rate"
+            exist: [
+              "locale"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "market"
+            }
+            {
+              lit: "rates"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

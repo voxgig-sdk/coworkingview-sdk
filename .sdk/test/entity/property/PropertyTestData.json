@@ -1,0 +1,134 @@
+{
+  "existing": {
+    "property": {
+      "PROPERTY00": {
+        "address": "sf0",
+        "amenities": [],
+        "capacity": 242,
+        "capacity_status": "sf3",
+        "city": {},
+        "coordinates": {},
+        "countryCode": "sf6",
+        "description": "sf7",
+        "distanceMeters": 248,
+        "excerpt": "sf9",
+        "featured": true,
+        "fromBillingPeriod": "sfb",
+        "fromPrice": {},
+        "images": [],
+        "indexabilityCompleteness": "sfe",
+        "indexabilityState": "sff",
+        "marketPosition": {},
+        "operator": {},
+        "pricingOptions": [],
+        "slug": "s103",
+        "title": "s104",
+        "updatedAt": "s105",
+        "webUrl": "s106",
+        "zone": {},
+        "id": "PROPERTY00"
+      },
+      "PROPERTY01": {
+        "address": "s1e0",
+        "amenities": [],
+        "capacity": 482,
+        "capacity_status": "s1e3",
+        "city": {},
+        "coordinates": {},
+        "countryCode": "s1e6",
+        "description": "s1e7",
+        "distanceMeters": 488,
+        "excerpt": "s1e9",
+        "featured": true,
+        "fromBillingPeriod": "s1eb",
+        "fromPrice": {},
+        "images": [],
+        "indexabilityCompleteness": "s1ee",
+        "indexabilityState": "s1ef",
+        "marketPosition": {},
+        "operator": {},
+        "pricingOptions": [],
+        "slug": "s1f3",
+        "title": "s1f4",
+        "updatedAt": "s1f5",
+        "webUrl": "s1f6",
+        "zone": {},
+        "id": "PROPERTY01"
+      },
+      "PROPERTY02": {
+        "address": "s2d0",
+        "amenities": [],
+        "capacity": 722,
+        "capacity_status": "s2d3",
+        "city": {},
+        "coordinates": {},
+        "countryCode": "s2d6",
+        "description": "s2d7",
+        "distanceMeters": 728,
+        "excerpt": "s2d9",
+        "featured": true,
+        "fromBillingPeriod": "s2db",
+        "fromPrice": {},
+        "images": [],
+        "indexabilityCompleteness": "s2de",
+        "indexabilityState": "s2df",
+        "marketPosition": {},
+        "operator": {},
+        "pricingOptions": [],
+        "slug": "s2e3",
+        "title": "s2e4",
+        "updatedAt": "s2e5",
+        "webUrl": "s2e6",
+        "zone": {},
+        "id": "PROPERTY02"
+      }
+    }
+  },
+  "new": {
+    "property": {
+      "property_ref01": {
+        "address": "s3c0",
+        "amenities": [],
+        "capacity": 962,
+        "capacity_status": "s3c3",
+        "city": {},
+        "coordinates": {},
+        "countryCode": "s3c6",
+        "description": "s3c7",
+        "distanceMeters": 968,
+        "excerpt": "s3c9",
+        "featured": true,
+        "fromBillingPeriod": "s3cb",
+        "fromPrice": {},
+        "images": [],
+        "indexabilityCompleteness": "s3ce",
+        "indexabilityState": "s3cf",
+        "marketPosition": {},
+        "operator": {},
+        "pricingOptions": [],
+        "slug": "s3d3",
+        "title": "s3d4",
+        "updatedAt": "s3d5",
+        "webUrl": "s3d6",
+        "zone": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/properties": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/properties/map": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/properties/{slug}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

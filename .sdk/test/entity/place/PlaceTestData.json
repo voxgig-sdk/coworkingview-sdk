@@ -1,0 +1,72 @@
+{
+  "existing": {
+    "place": {
+      "PLACE00": {
+        "asOf": "s78",
+        "center": {},
+        "faqs": [],
+        "id": "PLACE00",
+        "intro": "s7c",
+        "kind": "s7d",
+        "name": "s7e",
+        "parent": {},
+        "priceRange": {},
+        "propertyCount": 129,
+        "shortDescription": "s82",
+        "slug": "s83"
+      },
+      "PLACE01": {
+        "asOf": "sf0",
+        "center": {},
+        "faqs": [],
+        "id": "PLACE01",
+        "intro": "sf4",
+        "kind": "sf5",
+        "name": "sf6",
+        "parent": {},
+        "priceRange": {},
+        "propertyCount": 249,
+        "shortDescription": "sfa",
+        "slug": "sfb"
+      },
+      "PLACE02": {
+        "asOf": "s168",
+        "center": {},
+        "faqs": [],
+        "id": "PLACE02",
+        "intro": "s16c",
+        "kind": "s16d",
+        "name": "s16e",
+        "parent": {},
+        "priceRange": {},
+        "propertyCount": 369,
+        "shortDescription": "s172",
+        "slug": "s173"
+      }
+    }
+  },
+  "new": {
+    "place": {
+      "place_ref01": {
+        "asOf": "s1e0",
+        "center": {},
+        "faqs": [],
+        "intro": "s1e4",
+        "kind": "s1e5",
+        "name": "s1e6",
+        "parent": {},
+        "priceRange": {},
+        "propertyCount": 489,
+        "shortDescription": "s1ea",
+        "slug": "s1eb"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/places/{kind}/{slug}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

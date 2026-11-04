@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "facet": {
+      "FACET00": {
+        "capacityRange": {},
+        "facets": [],
+        "priceRange": {},
+        "id": "FACET00"
+      },
+      "FACET01": {
+        "capacityRange": {},
+        "facets": [],
+        "priceRange": {},
+        "id": "FACET01"
+      },
+      "FACET02": {
+        "capacityRange": {},
+        "facets": [],
+        "priceRange": {},
+        "id": "FACET02"
+      }
+    }
+  },
+  "new": {
+    "facet": {
+      "facet_ref01": {
+        "capacityRange": {},
+        "facets": [],
+        "priceRange": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/facets": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

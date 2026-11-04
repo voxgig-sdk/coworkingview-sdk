@@ -1,0 +1,44 @@
+# BasicPropertyFlow
+
+main: kit: flow: BasicPropertyFlow:
+{
+  entity: "property",
+  kind: "basic",
+  name: "BasicPropertyFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "property_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "property_ref01",
+        srcdatavar: "property_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "property01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-property_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPropertyFlow"
+}

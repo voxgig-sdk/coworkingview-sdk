@@ -1,0 +1,63 @@
+import { ConfigEntity } from './entity/ConfigEntity';
+import { FacetEntity } from './entity/FacetEntity';
+import { GeoEntity } from './entity/GeoEntity';
+import { HealthEntity } from './entity/HealthEntity';
+import { MarketEntity } from './entity/MarketEntity';
+import { OperatorEntity } from './entity/OperatorEntity';
+import { PlaceEntity } from './entity/PlaceEntity';
+import { PropertyEntity } from './entity/PropertyEntity';
+import { SearchEntity } from './entity/SearchEntity';
+export type * from './CoworkingviewTypes';
+import { inspect } from 'node:util';
+import type { Context, Feature } from './types';
+import { config } from './Config';
+import { CoworkingviewEntityBase } from './CoworkingviewEntityBase';
+import { Utility } from './utility/Utility';
+import { BaseFeature } from './feature/base/BaseFeature';
+declare const stdutil: Utility;
+type DirectResult = {
+    ok: false;
+    err: any;
+    status?: undefined;
+    headers?: undefined;
+    data?: undefined;
+} | {
+    ok: boolean;
+    status: number;
+    headers: any;
+    data: any;
+    err?: any;
+};
+declare class CoworkingviewSDK {
+    _mode: string;
+    _options: any;
+    _utility: Utility;
+    _features: Feature[];
+    _rootctx: Context;
+    constructor(options?: any);
+    options(): any;
+    utility(): any;
+    prepare(fetchargs?: any): Promise<any>;
+    direct(fetchargs?: any): Promise<DirectResult>;
+    _rawRequest(fetchargs?: any): Promise<DirectResult>;
+    graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
+    Config(entopts?: Record<string, any>): ConfigEntity;
+    Facet(entopts?: Record<string, any>): FacetEntity;
+    Geo(entopts?: Record<string, any>): GeoEntity;
+    Health(entopts?: Record<string, any>): HealthEntity;
+    Market(entopts?: Record<string, any>): MarketEntity;
+    Operator(entopts?: Record<string, any>): OperatorEntity;
+    Place(entopts?: Record<string, any>): PlaceEntity;
+    Property(entopts?: Record<string, any>): PropertyEntity;
+    Search(entopts?: Record<string, any>): SearchEntity;
+    static test(testoptsarg?: any, sdkoptsarg?: any): CoworkingviewSDK;
+    tester(testopts?: any, sdkopts?: any): CoworkingviewSDK;
+    toJSON(): {
+        name: string;
+    };
+    toString(): string;
+    [inspect.custom](): string;
+}
+declare const SDK: typeof CoworkingviewSDK;
+export { stdutil, config, BaseFeature, CoworkingviewEntityBase, CoworkingviewSDK, SDK, };
+export type { DirectResult };

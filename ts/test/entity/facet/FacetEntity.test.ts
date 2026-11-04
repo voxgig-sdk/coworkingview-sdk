@@ -1,0 +1,173 @@
+
+
+import Path from 'node:path'
+import * as Fs from 'node:fs'
+
+import { test, describe, afterEach } from 'node:test'
+import assert from 'node:assert'
+import { createLiveTransport } from '../../live-runner'
+import { runLiveEntity } from '../../live-entity'
+
+
+import { CoworkingviewSDK, BaseFeature, config, stdutil } from '../../..'
+
+import {
+  envOverride,
+  liveClientOptions,
+  liveDelay,
+  loadEnvLocal,
+  makeCtrl,
+  makeMatch,
+  makeReqdata,
+  makeStepData,
+  makeValid,
+  maybeSkipControl,
+} from '../../utility'
+
+
+loadEnvLocal(__dirname + '/../../../.env.local')
+
+
+describe('FacetEntity', async () => {
+
+  // Per-test live pacing. Delay is read from sdk-test-control.json's
+  // `test.live.delayMs`; only sleeps when COWORKINGVIEW_TEST_LIVE=TRUE.
+  afterEach(liveDelay('COWORKINGVIEW_TEST_LIVE'))
+
+  test('instance', async () => {
+    const testsdk = CoworkingviewSDK.test()
+    const ent = testsdk.Facet()
+    assert(null != ent)
+  })
+
+
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = CoworkingviewSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.Facet().load({"city":1,"locale":"x"} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
+  test('basic', async (t) => {
+
+    const live = 'TRUE' === process.env.COWORKINGVIEW_TEST_LIVE
+    for (const op of ['load']) {
+      if (!live && maybeSkipControl(t, 'entityOp', 'facet.' + op, live)) return
+    }
+
+    
+    const setup = basicSetup()
+    if (setup.live) {
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"capacityRange":{"a":true,"h":"Capacity Range","n":"capacityRange","r":true,"t":"`$OBJECT`","key$":"capacityRange","index$":0},"facets":{"a":true,"h":"Facets","n":"facets","r":true,"t":"`$ARRAY`","key$":"facets","index$":1},"priceRange":{"a":true,"h":"Price Range","n":"priceRange","r":true,"t":"`$OBJECT`","key$":"priceRange","index$":2}},"name":"facet","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /v1/facets","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"berlin","k":"query","n":"city","or":"city","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"country","or":"country","r":false,"t":"`$STRING`","index$":1},{"a":true,"k":"query","n":"currency","or":"currency","r":false,"t":"`$STRING`","index$":2},{"a":true,"ex":"en","k":"query","n":"locale","or":"locale","r":true,"t":"`$STRING`","index$":3},{"a":true,"k":"query","n":"operator","or":"operator","r":false,"t":"`$STRING`","index$":4},{"a":true,"k":"query","n":"pricing_option_type","or":"pricingOptionType","r":false,"t":"`$STRING`","index$":5},{"a":true,"k":"query","n":"zone","or":"zone","r":false,"t":"`$STRING`","index$":6}]},"k":"http","m":"GET","o":"/v1/facets","q":{"exist":["locale"]},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"v1"},{"lit":"facets"}],"t":{"req":"`reqdata`","res":"`body.data`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"facet","name__orig":"facet","Name":"Facet","name_":"facet","name-":"facet","NAME":"FACET","index$":1}, {"active":true,"entity":"facet","key$":"BasicFacetFlow","kind":"basic","name":"BasicFacetFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"facet_ref01","srcdatavar":"facet_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-facet_ref01"}}],"index$":0}]}, 'Facet', {"GET /v1/facets":{"protocol":"http","parameters":[{"name":"locale","in":"query","required":true,"schema":{"type":"string","enum":["en","de","es"]},"example":"en","index$":0},{"name":"country","in":"query","required":false,"schema":{"type":"string","minLength":1,"maxLength":200,"pattern":"^[a-z0-9-]+$"},"index$":1},{"name":"city","in":"query","required":false,"schema":{"type":"string","minLength":1,"maxLength":200,"pattern":"^[a-z0-9-]+$"},"example":"berlin","index$":2},{"name":"zone","in":"query","required":false,"schema":{"type":"string","minLength":1,"maxLength":200,"pattern":"^[a-z0-9-]+$"},"index$":3},{"name":"operator","in":"query","required":false,"schema":{"type":"string","minLength":1,"maxLength":200,"pattern":"^[a-z0-9-]+$"},"index$":4},{"name":"pricingOptionType","in":"query","required":false,"schema":{"type":"string","enum":["private_office","exclusive_bereich","fix_desk","flex_desk","day_pass","meeting_room","virtual_office","event_space","membership"]},"index$":5},{"name":"currency","in":"query","required":false,"schema":{"type":"string","enum":["EUR","GBP","USD","CHF","VES","AED"]},"index$":6}]}}, { strict: LIVE_STRICT, t })
+    }
+    const client = setup.client
+    const struct = setup.struct
+
+    const isempty = struct.isempty
+    const select = struct.select
+
+    let facet_ref01_data = Object.values(setup.data.existing.facet)[0] as any
+
+    // LOAD
+    const facet_ref01_ent = client.Facet()
+    const facet_ref01_match_dt0: any = {}
+    const facet_ref01_data_dt0 = (await facet_ref01_ent.load(facet_ref01_match_dt0)).data()
+    assert(null != facet_ref01_data_dt0)
+
+
+  })
+})
+
+
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
+
+function basicSetup(extra?: any) {
+  // TODO: fix test def options
+  const options: any = {} // null
+
+  // TODO: needs test utility to resolve path
+  const entityDataFile =
+    Path.resolve(__dirname, 
+      '../../../../.sdk/test/entity/facet/FacetTestData.json')
+
+  // TODO: file ready util needed?
+  const entityDataSource = Fs.readFileSync(entityDataFile).toString('utf8')
+
+  // TODO: need a xlang JSON parse utility in voxgig/struct with better error msgs
+  const entityData = JSON.parse(entityDataSource)
+
+  options.entity = entityData.existing
+
+  let client = CoworkingviewSDK.test(options, extra)
+  const struct = client.utility().struct
+  const merge = struct.merge
+  const transform = struct.transform
+
+  let idmap = transform(
+    ['facet01','facet02','facet03'],
+    {
+      '`$PACK`': ['', {
+        '`$KEY`': '`$COPY`',
+        '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
+      }]
+    })
+
+  const env = envOverride({
+    'COWORKINGVIEW_TEST_FACET_ENTID': idmap,
+    'COWORKINGVIEW_TEST_LIVE': 'FALSE',
+    'COWORKINGVIEW_TEST_EXPLAIN': 'FALSE',
+  })
+
+  idmap = env['COWORKINGVIEW_TEST_FACET_ENTID']
+
+  const live = 'TRUE' === env.COWORKINGVIEW_TEST_LIVE
+
+  const transport = createLiveTransport()
+  if (live) {
+    const rawIds = process.env['COWORKINGVIEW_TEST_FACET_ENTID']
+    idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {}
+    if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+      throw new Error('Live ENTID must be a JSON object')
+    }
+    client = new CoworkingviewSDK(merge([
+      // FIRST, so the generated fields below win: sdk-test-control.json's
+      // test.client.options adds to the live client, it does not redirect it.
+      liveClientOptions(),
+      {
+      },
+      // 'extra || {}', not a bare 'extra': struct.merge returns UNDEFINED when the
+      // last entry is undefined, and basicSetup is normally called with no
+      // argument at all - so a bare 'extra' silently discarded the apikey
+      // and server values above and handed the SDK undefined. Harmless
+      // while there was nothing in that object; not harmless now.
+      extra || {},
+      { system: { fetch: transport.fetch } }
+    ]))
+  }
+
+  const setup = {
+    idmap,
+    env,
+    options,
+    client,
+    struct,
+    data: entityData,
+    explain: 'TRUE' === env.COWORKINGVIEW_TEST_EXPLAIN,
+    live,
+    transport,
+    now: Date.now(),
+  }
+
+  return setup
+}
+  

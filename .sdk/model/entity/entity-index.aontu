@@ -1,0 +1,11 @@
+# Entity Models
+
+@"./config.aontu"
+@"./facet.aontu"
+@"./geo.aontu"
+@"./health.aontu"
+@"./market.aontu"
+@"./operator.aontu"
+@"./place.aontu"
+@"./property.aontu"
+@"./search.aontu"

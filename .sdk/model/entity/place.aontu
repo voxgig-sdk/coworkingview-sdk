@@ -1,0 +1,176 @@
+# Entity: place
+
+main: kit: entity: place: {
+
+  alias: field: {}
+
+  fields: {
+    asOf: {
+      fo: "date-time"
+      h: "As Of"
+      n: "asOf"
+      r: true
+      t: "`$STRING`"
+    }
+    center: {
+      h: "Center"
+      n: "center"
+      r: true
+      t: "`$OBJECT`"
+    }
+    faqs: {
+      h: "Faqs"
+      n: "faqs"
+      r: true
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    intro: {
+      h: "Intro"
+      n: "intro"
+      r: false
+      t: "`$STRING`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: true
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    parent: {
+      h: "Parent"
+      n: "parent"
+      r: true
+      t: "`$OBJECT`"
+    }
+    priceRange: {
+      h: "Price Range"
+      n: "priceRange"
+      r: true
+      t: "`$OBJECT`"
+    }
+    propertyCount: {
+      h: "Property Count"
+      n: "propertyCount"
+      r: true
+      t: "`$INTEGER`"
+    }
+    shortDescription: {
+      h: "Short Description"
+      n: "shortDescription"
+      r: false
+      t: "`$STRING`"
+    }
+    slug: {
+      h: "Slug"
+      n: "slug"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    from: {
+      kind: "kind"
+      slug: "slug"
+    }
+    name: "id"
+    parts: [
+      "kind"
+      "slug"
+    ]
+    sep: "/"
+  }
+
+  name: "place"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/places/{kind}/{slug}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "zone"
+                k: "param"
+                n: "kind"
+                or: "kind"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "mitte"
+                k: "param"
+                n: "slug"
+                or: "slug"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "en"
+                k: "query"
+                n: "locale"
+                or: "locale"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/places/{kind}/{slug}"
+          q: {
+            exist: [
+              "kind"
+              "locale"
+              "slug"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "places"
+            }
+            {
+              var: "kind"
+            }
+            {
+              var: "slug"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

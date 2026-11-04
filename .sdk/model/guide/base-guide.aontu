@@ -1,0 +1,88 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 9
+  metrics: count: path: 11
+  metrics: count: method: 11
+
+  entity: config: {
+    path: "/v1/config": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: facet: {
+    path: "/v1/facets": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: geo: {
+    path: "/v1/geo/bootstrap": {
+      action: "bootstrap": {}
+      op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: health: {
+    path: "/v1/health": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: market: {
+    path: "/v1/market/rates": {
+      action: "rate": {}
+      op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: operator: {
+    path: "/v1/operators/{slug}": {
+      rename: param: "slug": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: place: {
+    path: "/v1/places/{kind}/{slug}": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: property: {
+    path: "/v1/properties": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/properties/map": {
+      action: "map": {}
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/properties/{slug}": {
+      rename: param: "slug": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: search: {
+    path: "/v1/search/suggest": {
+      action: "suggest": {}
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+}

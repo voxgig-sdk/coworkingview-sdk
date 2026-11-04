@@ -1,0 +1,28 @@
+# BasicGeoFlow
+
+main: kit: flow: BasicGeoFlow:
+{
+  entity: "geo",
+  kind: "basic",
+  name: "BasicGeoFlow",
+  step: [
+    {
+      i: {
+        ref: "geo_ref01",
+        srcdatavar: "geo_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-geo_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGeoFlow"
+}

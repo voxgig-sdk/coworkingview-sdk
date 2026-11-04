@@ -1,0 +1,124 @@
+# Entity: facet
+
+main: kit: entity: facet: {
+
+  alias: field: {}
+
+  fields: {
+    capacityRange: {
+      h: "Capacity Range"
+      n: "capacityRange"
+      r: true
+      t: "`$OBJECT`"
+    }
+    facets: {
+      h: "Facets"
+      n: "facets"
+      r: true
+      t: "`$ARRAY`"
+    }
+    priceRange: {
+      h: "Price Range"
+      n: "priceRange"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "facet"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/facets"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "berlin"
+                k: "query"
+                n: "city"
+                or: "city"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "currency"
+                or: "currency"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "en"
+                k: "query"
+                n: "locale"
+                or: "locale"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "operator"
+                or: "operator"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pricing_option_type"
+                or: "pricingOptionType"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "zone"
+                or: "zone"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/facets"
+          q: {
+            exist: [
+              "locale"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "facets"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

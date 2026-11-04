@@ -1,0 +1,154 @@
+# Entity: operator
+
+main: kit: entity: operator: {
+
+  alias: field: {}
+
+  fields: {
+    asOf: {
+      fo: "date-time"
+      h: "As Of"
+      n: "asOf"
+      r: true
+      t: "`$STRING`"
+    }
+    cities: {
+      h: "Cities"
+      n: "cities"
+      r: true
+      t: "`$ARRAY`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      t: "`$STRING`"
+    }
+    faqs: {
+      h: "Faqs"
+      n: "faqs"
+      r: true
+      t: "`$ARRAY`"
+    }
+    indexabilityBrand: {
+      h: "Indexability Brand"
+      n: "indexabilityBrand"
+      r: false
+      t: "`$ANY`"
+    }
+    logo: {
+      h: "Logo"
+      n: "logo"
+      r: true
+      t: "`$OBJECT`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    pricePosition: {
+      h: "Price Position"
+      n: "pricePosition"
+      r: true
+      t: "`$OBJECT`"
+    }
+    propertyCount: {
+      h: "Property Count"
+      n: "propertyCount"
+      r: true
+      t: "`$INTEGER`"
+    }
+    slug: {
+      h: "Slug"
+      n: "slug"
+      r: true
+      t: "`$STRING`"
+    }
+    tagline: {
+      h: "Tagline"
+      n: "tagline"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "slug"
+    name: "id"
+  }
+
+  name: "operator"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/operators/{slug}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "hq"
+                k: "param"
+                n: "id"
+                or: "slug"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "en"
+                k: "query"
+                n: "locale"
+                or: "locale"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/operators/{slug}"
+          q: {
+            exist: [
+              "id"
+              "locale"
+            ]
+          }
+          r: {
+            param: {
+              slug: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "operators"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

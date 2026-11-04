@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "geo": {
+      "GEO00": {
+        "id": "GEO00"
+      },
+      "GEO01": {
+        "id": "GEO01"
+      },
+      "GEO02": {
+        "id": "GEO02"
+      }
+    }
+  },
+  "new": {
+    "geo": {
+      "geo_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /v1/geo/bootstrap": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

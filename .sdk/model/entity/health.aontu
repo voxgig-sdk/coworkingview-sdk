@@ -1,0 +1,58 @@
+# Entity: health
+
+main: kit: entity: health: {
+
+  alias: field: {}
+
+  fields: {
+    sha: {
+      h: "Sha"
+      n: "sha"
+      r: true
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "health"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/health"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/health"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "health"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

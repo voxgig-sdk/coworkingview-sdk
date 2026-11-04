@@ -1,0 +1,72 @@
+{
+  "existing": {
+    "operator": {
+      "OPERATOR00": {
+        "asOf": "s6e",
+        "cities": [],
+        "description": "s70",
+        "faqs": [],
+        "indexabilityBrand": "s72",
+        "logo": {},
+        "name": "s74",
+        "pricePosition": {},
+        "propertyCount": 118,
+        "slug": "s77",
+        "tagline": "s78",
+        "id": "OPERATOR00"
+      },
+      "OPERATOR01": {
+        "asOf": "sdc",
+        "cities": [],
+        "description": "sde",
+        "faqs": [],
+        "indexabilityBrand": "se0",
+        "logo": {},
+        "name": "se2",
+        "pricePosition": {},
+        "propertyCount": 228,
+        "slug": "se5",
+        "tagline": "se6",
+        "id": "OPERATOR01"
+      },
+      "OPERATOR02": {
+        "asOf": "s14a",
+        "cities": [],
+        "description": "s14c",
+        "faqs": [],
+        "indexabilityBrand": "s14e",
+        "logo": {},
+        "name": "s150",
+        "pricePosition": {},
+        "propertyCount": 338,
+        "slug": "s153",
+        "tagline": "s154",
+        "id": "OPERATOR02"
+      }
+    }
+  },
+  "new": {
+    "operator": {
+      "operator_ref01": {
+        "asOf": "s1b8",
+        "cities": [],
+        "description": "s1ba",
+        "faqs": [],
+        "indexabilityBrand": "s1bc",
+        "logo": {},
+        "name": "s1be",
+        "pricePosition": {},
+        "propertyCount": 448,
+        "slug": "s1c1",
+        "tagline": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/operators/{slug}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

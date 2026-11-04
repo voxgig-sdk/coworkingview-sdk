@@ -1,0 +1,70 @@
+# Entity: config
+
+main: kit: entity: config: {
+
+  alias: field: {}
+
+  fields: {
+    flags: {
+      h: "Flags"
+      n: "flags"
+      r: true
+      t: "`$OBJECT`"
+    }
+    message: {
+      h: "Message"
+      n: "message"
+      r: true
+      t: "`$OBJECT`"
+    }
+    minSupportedBuild: {
+      h: "Min Supported Build"
+      n: "minSupportedBuild"
+      r: true
+      t: "`$INTEGER`"
+    }
+    recommendedBuild: {
+      h: "Recommended Build"
+      n: "recommendedBuild"
+      r: false
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "config"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/config"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/config"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "config"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

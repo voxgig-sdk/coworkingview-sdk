@@ -1,0 +1,3062 @@
+{
+  "def": "coworkingview_0.1.0.json",
+  "main": {
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        },
+        "repr": "auto"
+      },
+      "contributor": {},
+      "copies": "merge",
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
+      "entity": {
+        "config": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "flags": {
+              "a": true,
+              "h": "Flags",
+              "n": "flags",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "message": {
+              "a": true,
+              "h": "Message",
+              "n": "message",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "minSupportedBuild": {
+              "a": true,
+              "h": "Min Supported Build",
+              "n": "minSupportedBuild",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "recommendedBuild": {
+              "a": true,
+              "h": "Recommended Build",
+              "n": "recommendedBuild",
+              "r": false,
+              "t": "`$INTEGER`"
+            }
+          },
+          "name": "config",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/config",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/config",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "config"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "facet": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "capacityRange": {
+              "a": true,
+              "h": "Capacity Range",
+              "n": "capacityRange",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "facets": {
+              "a": true,
+              "h": "Facets",
+              "n": "facets",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "priceRange": {
+              "a": true,
+              "h": "Price Range",
+              "n": "priceRange",
+              "r": true,
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "facet",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/facets",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "berlin",
+                        "k": "query",
+                        "n": "city",
+                        "or": "city",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "currency",
+                        "or": "currency",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en",
+                        "k": "query",
+                        "n": "locale",
+                        "or": "locale",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "operator",
+                        "or": "operator",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "pricing_option_type",
+                        "or": "pricingOptionType",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "zone",
+                        "or": "zone",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/facets",
+                  "q": {
+                    "exist": [
+                      "locale"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "facets"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "geo": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {},
+          "name": "geo",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/geo/bootstrap",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "en",
+                        "k": "query",
+                        "n": "locale",
+                        "or": "locale",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/geo/bootstrap",
+                  "q": {
+                    "$action": "bootstrap",
+                    "exist": [
+                      "locale"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "geo"
+                    },
+                    {
+                      "lit": "bootstrap"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "health": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "sha": {
+              "a": true,
+              "h": "Sha",
+              "n": "sha",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": true,
+              "t": "`$STRING`"
+            }
+          },
+          "name": "health",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/health",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/health",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "health"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "market": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {},
+          "name": "market",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/market/rates",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "berlin",
+                        "k": "query",
+                        "n": "city",
+                        "or": "city",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "currency",
+                        "or": "currency",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en",
+                        "k": "query",
+                        "n": "locale",
+                        "or": "locale",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/market/rates",
+                  "q": {
+                    "$action": "rate",
+                    "exist": [
+                      "locale"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "market"
+                    },
+                    {
+                      "lit": "rates"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "operator": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "asOf": {
+              "a": true,
+              "fo": "date-time",
+              "h": "As Of",
+              "n": "asOf",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "cities": {
+              "a": true,
+              "h": "Cities",
+              "n": "cities",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "faqs": {
+              "a": true,
+              "h": "Faqs",
+              "n": "faqs",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "indexabilityBrand": {
+              "a": true,
+              "h": "Indexability Brand",
+              "n": "indexabilityBrand",
+              "r": false,
+              "t": "`$ANY`"
+            },
+            "logo": {
+              "a": true,
+              "h": "Logo",
+              "n": "logo",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "pricePosition": {
+              "a": true,
+              "h": "Price Position",
+              "n": "pricePosition",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "propertyCount": {
+              "a": true,
+              "h": "Property Count",
+              "n": "propertyCount",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "slug": {
+              "a": true,
+              "h": "Slug",
+              "n": "slug",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "tagline": {
+              "a": true,
+              "h": "Tagline",
+              "n": "tagline",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "slug",
+            "name": "id"
+          },
+          "name": "operator",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/operators/{slug}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "hq",
+                        "k": "param",
+                        "n": "id",
+                        "or": "slug",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "en",
+                        "k": "query",
+                        "n": "locale",
+                        "or": "locale",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/operators/{slug}",
+                  "q": {
+                    "exist": [
+                      "id",
+                      "locale"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "slug": "id"
+                    }
+                  },
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "operators"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "place": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "asOf": {
+              "a": true,
+              "fo": "date-time",
+              "h": "As Of",
+              "n": "asOf",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "center": {
+              "a": true,
+              "h": "Center",
+              "n": "center",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "faqs": {
+              "a": true,
+              "h": "Faqs",
+              "n": "faqs",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "intro": {
+              "a": true,
+              "h": "Intro",
+              "n": "intro",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "kind": {
+              "a": true,
+              "h": "Kind",
+              "n": "kind",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "parent": {
+              "a": true,
+              "h": "Parent",
+              "n": "parent",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "priceRange": {
+              "a": true,
+              "h": "Price Range",
+              "n": "priceRange",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "propertyCount": {
+              "a": true,
+              "h": "Property Count",
+              "n": "propertyCount",
+              "r": true,
+              "t": "`$INTEGER`"
+            },
+            "shortDescription": {
+              "a": true,
+              "h": "Short Description",
+              "n": "shortDescription",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "slug": {
+              "a": true,
+              "h": "Slug",
+              "n": "slug",
+              "r": true,
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "from": {
+              "kind": "kind",
+              "slug": "slug"
+            },
+            "name": "id",
+            "parts": [
+              "kind",
+              "slug"
+            ],
+            "sep": "/"
+          },
+          "name": "place",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/places/{kind}/{slug}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "zone",
+                        "k": "param",
+                        "n": "kind",
+                        "or": "kind",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "mitte",
+                        "k": "param",
+                        "n": "slug",
+                        "or": "slug",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "en",
+                        "k": "query",
+                        "n": "locale",
+                        "or": "locale",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/places/{kind}/{slug}",
+                  "q": {
+                    "exist": [
+                      "kind",
+                      "locale",
+                      "slug"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "places"
+                    },
+                    {
+                      "var": "kind"
+                    },
+                    {
+                      "var": "slug"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "property": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "address": {
+              "a": true,
+              "h": "Address",
+              "n": "address",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "amenities": {
+              "a": true,
+              "h": "Amenities",
+              "n": "amenities",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "capacity": {
+              "a": true,
+              "h": "Capacity",
+              "n": "capacity",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "capacity_status": {
+              "a": true,
+              "h": "Capacity Status",
+              "n": "capacity_status",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "city": {
+              "a": true,
+              "h": "City",
+              "n": "city",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "coordinates": {
+              "a": true,
+              "h": "Coordinates",
+              "n": "coordinates",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "countryCode": {
+              "a": true,
+              "h": "Country Code",
+              "n": "countryCode",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "distanceMeters": {
+              "a": true,
+              "h": "Distance Meters",
+              "n": "distanceMeters",
+              "r": false,
+              "t": "`$NUMBER`"
+            },
+            "excerpt": {
+              "a": true,
+              "h": "Excerpt",
+              "n": "excerpt",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "featured": {
+              "a": true,
+              "h": "Featured",
+              "n": "featured",
+              "r": true,
+              "t": "`$BOOLEAN`"
+            },
+            "fromBillingPeriod": {
+              "a": true,
+              "h": "From Billing Period",
+              "n": "fromBillingPeriod",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "fromPrice": {
+              "a": true,
+              "h": "From Price",
+              "n": "fromPrice",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "images": {
+              "a": true,
+              "h": "Images",
+              "n": "images",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "indexabilityCompleteness": {
+              "a": true,
+              "h": "Indexability Completeness",
+              "n": "indexabilityCompleteness",
+              "r": false,
+              "t": "`$ANY`"
+            },
+            "indexabilityState": {
+              "a": true,
+              "h": "Indexability State",
+              "n": "indexabilityState",
+              "r": false,
+              "t": "`$ANY`"
+            },
+            "marketPosition": {
+              "a": true,
+              "h": "Market Position",
+              "n": "marketPosition",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "operator": {
+              "a": true,
+              "h": "Operator",
+              "n": "operator",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "pricingOptions": {
+              "a": true,
+              "h": "Pricing Options",
+              "n": "pricingOptions",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "slug": {
+              "a": true,
+              "h": "Slug",
+              "n": "slug",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "updatedAt": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Updated At",
+              "n": "updatedAt",
+              "r": false,
+              "sh": "When the underlying CMS record was last updated.",
+              "t": "`$STRING`"
+            },
+            "webUrl": {
+              "a": true,
+              "fo": "uri",
+              "h": "Web Url",
+              "n": "webUrl",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "zone": {
+              "a": true,
+              "h": "Zone",
+              "n": "zone",
+              "r": true,
+              "t": "`$OBJECT`"
+            }
+          },
+          "id": {
+            "field": "slug",
+            "name": "id"
+          },
+          "name": "property",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/properties",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "address",
+                        "or": "address",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "amenity",
+                        "or": "amenities",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "bbox",
+                        "or": "bbox",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "berlin",
+                        "k": "query",
+                        "n": "city",
+                        "or": "city",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "currency",
+                        "or": "currency",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "lat",
+                        "or": "lat",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "lng",
+                        "or": "lng",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en",
+                        "k": "query",
+                        "n": "locale",
+                        "or": "locale",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "max_price",
+                        "or": "maxPrice",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 4,
+                        "k": "query",
+                        "n": "min_capacity",
+                        "or": "minCapacity",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "min_price",
+                        "or": "minPrice",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "operator",
+                        "or": "operator",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 2,
+                        "k": "query",
+                        "n": "page_size",
+                        "or": "pageSize",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "private_office",
+                        "k": "query",
+                        "n": "pricing_option_type",
+                        "or": "pricingOptionType",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "radius_meter",
+                        "or": "radiusMeters",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "seed",
+                        "or": "seed",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sort_by",
+                        "or": "sortBy",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "zone",
+                        "or": "zone",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/properties",
+                  "q": {
+                    "exist": [
+                      "locale"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "properties"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/properties/map",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "address",
+                        "or": "address",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "amenity",
+                        "or": "amenities",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "13.2,52.4,13.6,52.6",
+                        "k": "query",
+                        "n": "bbox",
+                        "or": "bbox",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "city",
+                        "or": "city",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "country",
+                        "or": "country",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "currency",
+                        "or": "currency",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "lat",
+                        "or": "lat",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "lng",
+                        "or": "lng",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en",
+                        "k": "query",
+                        "n": "locale",
+                        "or": "locale",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "max_price",
+                        "or": "maxPrice",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "min_capacity",
+                        "or": "minCapacity",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "min_price",
+                        "or": "minPrice",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "operator",
+                        "or": "operator",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 20,
+                        "k": "query",
+                        "n": "page_size",
+                        "or": "pageSize",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "pricing_option_type",
+                        "or": "pricingOptionType",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "radius_meter",
+                        "or": "radiusMeters",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "seed",
+                        "or": "seed",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "sort_by",
+                        "or": "sortBy",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "zone",
+                        "or": "zone",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/properties/map",
+                  "q": {
+                    "$action": "map",
+                    "exist": [
+                      "locale"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "properties"
+                    },
+                    {
+                      "lit": "map"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/properties/{slug}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "hq-kings-cross-london",
+                        "k": "param",
+                        "n": "id",
+                        "or": "slug",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "en",
+                        "k": "query",
+                        "n": "locale",
+                        "or": "locale",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/properties/{slug}",
+                  "q": {
+                    "exist": [
+                      "id",
+                      "locale"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "slug": "id"
+                    }
+                  },
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "properties"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "search": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {},
+          "name": "search",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /v1/search/suggest",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": 5,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "en",
+                        "k": "query",
+                        "n": "locale",
+                        "or": "locale",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "mitte",
+                        "k": "query",
+                        "n": "q",
+                        "or": "q",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/search/suggest",
+                  "q": {
+                    "$action": "suggest",
+                    "exist": [
+                      "locale",
+                      "q"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "search"
+                    },
+                    {
+                      "lit": "suggest"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.data`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "ratelimit": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "burst": 5,
+              "rate": 5
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "description": "Client-side rate limiting via a token bucket",
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "ratelimit",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Rate limiting",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "retry": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "factor": 2,
+              "maxDelay": 2000,
+              "minDelay": 50,
+              "retries": 2,
+              "statuses": [
+                408,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ]
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "description": "Automatic retry of transient failures with exponential backoff",
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "retry",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Retry",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "test": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
+          },
+          "description": "In-memory mock transport for testing without a live server",
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Test transport",
+          "transport": "base",
+          "version": "0.0.1"
+        },
+        "timeout": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "ms": 30000
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "now": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "description": "Per-request timeout with transport abort",
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "timeout",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Timeout",
+          "transport": "wrap",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicConfigFlow": {
+          "active": true,
+          "entity": "config",
+          "key$": "BasicConfigFlow",
+          "kind": "basic",
+          "name": "BasicConfigFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "config_ref01",
+                "srcdatavar": "config_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-config_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicFacetFlow": {
+          "active": true,
+          "entity": "facet",
+          "key$": "BasicFacetFlow",
+          "kind": "basic",
+          "name": "BasicFacetFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "facet_ref01",
+                "srcdatavar": "facet_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-facet_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicGeoFlow": {
+          "active": true,
+          "entity": "geo",
+          "key$": "BasicGeoFlow",
+          "kind": "basic",
+          "name": "BasicGeoFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "geo_ref01",
+                "srcdatavar": "geo_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-geo_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicHealthFlow": {
+          "active": true,
+          "entity": "health",
+          "key$": "BasicHealthFlow",
+          "kind": "basic",
+          "name": "BasicHealthFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "health_ref01",
+                "srcdatavar": "health_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-health_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicMarketFlow": {
+          "active": true,
+          "entity": "market",
+          "key$": "BasicMarketFlow",
+          "kind": "basic",
+          "name": "BasicMarketFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "market_ref01",
+                "srcdatavar": "market_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-market_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOperatorFlow": {
+          "active": true,
+          "entity": "operator",
+          "key$": "BasicOperatorFlow",
+          "kind": "basic",
+          "name": "BasicOperatorFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "operator_ref01",
+                "srcdatavar": "operator_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "operator01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-operator_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicPlaceFlow": {
+          "active": true,
+          "entity": "place",
+          "key$": "BasicPlaceFlow",
+          "kind": "basic",
+          "name": "BasicPlaceFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "place_ref01",
+                "srcdatavar": "place_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "place01",
+                "kind": "kind01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-place_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicPropertyFlow": {
+          "active": true,
+          "entity": "property",
+          "key$": "BasicPropertyFlow",
+          "kind": "basic",
+          "name": "BasicPropertyFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "property_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "property_ref01",
+                "srcdatavar": "property_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "property01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-property_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicSearchFlow": {
+          "active": true,
+          "entity": "search",
+          "key$": "BasicSearchFlow",
+          "kind": "basic",
+          "name": "BasicSearchFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "search_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "info": {
+        "auth": false,
+        "description": "Read API for the CoworkingView catalogue plus the lead write path. Within a major version this contract is APPEND-ONLY: fields are added, never removed or retyped, because clients include mobile builds that cannot be recalled. Exception recorded 21 Oct 2026: `meta.citation.license` and `meta.citation.licenseUrl` were removed. Exception recorded 21 Oct 2026: property cards, property detail, map rows and ranked[] do not carry a third-party score, a third-party review count, or an external-ratings object. Google Maps Platform terms forbid caching those Places figures and serving them here. A legacy rating order is deprecated: it is still accepted and ordered as the default, and it is omitted from this document. A breaking change means /v2, with /v1 kept alive for at least two app releases. No API key: every endpoint is public, which the root `security: []` states explicitly. Catalogue content (descriptions, images, logos, names and prices) belongs to the respective operators and rights holders. No licence to reuse it is granted. You may link to listing pages. Systematic extraction or re-use of the catalogue database is not permitted. Catalogue responses carry that statement on `meta.catalogueNotice`, separate from `meta.citation` (source, canonical page and a one-line credit). Market rates do not carry it. The two POST /v1/leads/* operations are NOT reads: each one creates a real enquiry that is sent to the CoworkingView team and forwarded to space operators. Adjusted on 2026-10-23 after live checks: locale is required (en|de|es); examples use real slugs; removed POST /v1/leads/contact; removed POST /v1/leads/inquiry; removed /v1/rankings (410 Gone).",
+        "servers": [
+          {
+            "description": "Production",
+            "url": "https://api.coworkingview.com"
+          }
+        ],
+        "summary": "Read API for the CoworkingView catalogue plus the lead write path.",
+        "title": "CoworkingView API",
+        "version": "1.0.0",
+        "website": "https://coworkingview.com"
+      },
+      "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,patch,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "in": "",
+          "name": "",
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "active": true,
+          "hint": "0",
+          "keys": "key,secret,token,password,passwd,authorization,cookie,credential,signature",
+          "mask": "[redacted]",
+          "min": "4",
+          "values": ""
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
+      "phase": {
+        "build": {
+          "active": true
+        },
+        "top": {
+          "active": true
+        }
+      },
+      "publisher": {
+        "name": "",
+        "security": "",
+        "url": ""
+      },
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
+      "target": {
+        "go": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [
+              "test/feature_test.go"
+            ],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "coworkingview",
+            "package": "",
+            "path": ""
+          },
+          "name": "go",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
+          "title": "Golang"
+        },
+        "go-cli": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "coworkingview",
+            "package": "",
+            "path": ""
+          },
+          "name": "go-cli",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [],
+          "title": "Go CLI"
+        },
+        "go-mcp": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "coworkingview",
+            "package": "",
+            "path": ""
+          },
+          "name": "go-mcp",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [],
+          "title": "Go MCP server",
+          "tool": {
+            "write": false
+          }
+        },
+        "lua": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "--"
+          },
+          "deps": {
+            "dkjson": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.5"
+            }
+          },
+          "ext": "lua",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "coworkingview",
+            "package": "",
+            "path": ""
+          },
+          "name": "lua",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "luarocks",
+              "package": "",
+              "state": "pending",
+              "url": "https://luarocks.org",
+              "vault": {
+                "alias": "luarocks",
+                "env": "LUAROCKS_API_KEY",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
+          "title": "Lua"
+        },
+        "php": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "php",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "coworkingview",
+            "package": "",
+            "path": ""
+          },
+          "name": "php",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "packagist",
+              "package": "",
+              "state": "pending",
+              "url": "https://packagist.org",
+              "vault": {
+                "alias": "packagist",
+                "env": "PACKAGIST_API_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
+          "title": "PHP"
+        },
+        "py": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "#"
+          },
+          "deps": {
+            "requests": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.33"
+            }
+          },
+          "ext": "py",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "coworkingview",
+            "package": "",
+            "path": ""
+          },
+          "name": "py",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "pypi",
+              "package": "",
+              "state": "pending",
+              "url": "https://pypi.org",
+              "vault": {
+                "alias": "pypi",
+                "env": "",
+                "recipe": "pypi"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
+          "title": "Python"
+        },
+        "rb": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "#"
+          },
+          "deps": {
+            "json": {
+              "active": true,
+              "kind": "prod",
+              "version": "*"
+            }
+          },
+          "ext": "rb",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "coworkingview",
+            "package": "",
+            "path": ""
+          },
+          "name": "rb",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "rubygems",
+              "package": "",
+              "state": "pending",
+              "url": "https://rubygems.org",
+              "vault": {
+                "alias": "gem",
+                "env": "",
+                "recipe": "gem"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.rb"
+          ],
+          "title": "Ruby"
+        },
+        "ts": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "coworkingview",
+            "package": "",
+            "path": ""
+          },
+          "name": "ts",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
+          "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": true
+        }
+      },
+      "text": {
+        "about_md": "",
+        "docs_url": "",
+        "entity_desc": {},
+        "homepage": "",
+        "meta_source": "",
+        "summary": "",
+        "tagline": "",
+        "title": "",
+        "website": ""
+      }
+    }
+  },
+  "name": "coworkingview",
+  "origin": "voxgig-sdk"
+}
